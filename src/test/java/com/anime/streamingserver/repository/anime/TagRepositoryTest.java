@@ -10,5 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 public class TagRepositoryTest {
 
     @Autowired
-    TagsRepository tagsRepository;
+    TagRepository tagRepository;
 }
