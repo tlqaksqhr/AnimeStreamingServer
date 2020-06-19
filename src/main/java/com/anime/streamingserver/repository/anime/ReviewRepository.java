@@ -14,6 +14,5 @@ public interface ReviewRepository {
     void deleteReviewByAnimation(Review review);
     void saveReviewByAnimation(Review review);
     int countReviewByAnimation(Animation animation);
-
      */
 }
