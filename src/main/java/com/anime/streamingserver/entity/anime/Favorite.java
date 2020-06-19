@@ -5,8 +5,11 @@ import com.anime.streamingserver.entity.user.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -19,8 +22,14 @@ public class Favorite {
     @Column(name = "favorite_id")
     private Long id;
 
-    //private User user;
 
+    //@CreatedBy
+    //@Column(updatable = false)
+    //private String createdBy;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "animation_id")

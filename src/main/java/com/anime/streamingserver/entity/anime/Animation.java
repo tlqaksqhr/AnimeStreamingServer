@@ -14,6 +14,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO : 나중에 판권만료 Entity 도 추가
+// TODO : 상속형태로 바꾸기
 
 @Entity
 @Getter
@@ -41,5 +43,8 @@ public class Animation {
     private String thumbnail;
 
     @OneToMany(mappedBy = "animation")
-    private List<GenreCategory> genreCategorys = new ArrayList<GenreCategory>();
+    private List<GenreCategory> genreCategories = new ArrayList<GenreCategory>();
+
+    @OneToMany(mappedBy = "tag")
+    private List<TagCategory> tagCategories = new ArrayList<TagCategory>();
 }
