@@ -1,4 +1,4 @@
-package com.anime.streamingserver;
+package com.anime.streamingserver.config;
 
 
 import org.springframework.context.annotation.Configuration;
