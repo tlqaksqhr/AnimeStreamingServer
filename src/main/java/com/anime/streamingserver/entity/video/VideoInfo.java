@@ -2,6 +2,10 @@ package com.anime.streamingserver.entity.video;
 
 
 import com.anime.streamingserver.entity.anime.Animation;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -10,6 +14,10 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class VideoInfo {
 
     @Id @GeneratedValue
@@ -22,13 +30,13 @@ public class VideoInfo {
     @Column(name = "video_url")
     private String videoUrl;
 
-    // TODO : enum type 으로 바꾸기
     @Column(name = "video_type")
-    private String videoType;
+    @Enumerated(EnumType.STRING)
+    private VideoType videoType;
 
-    // TODO : enum type 으로 바꾸기
     @Column(name = "access_level")
-    private String accessLevel;
+    @Enumerated(EnumType.STRING)
+    private AccessLevel accessLevel;
 
     @CreatedDate
     private LocalDateTime publishDate;
